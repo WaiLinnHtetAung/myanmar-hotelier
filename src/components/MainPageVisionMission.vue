@@ -15,8 +15,6 @@
                 </div>
                 <div class="col-xl-7 slides  position-relative bg-info">
                     <swiper
-                        @swiper="onSwiper"
-                        @slideChange="onSlideChange"
                         :autoplay="{ delay: 5000, disableOnInteraction: false, pauseOnMouseEnter: false }"
                         :breakpoints="{
                             '100': {

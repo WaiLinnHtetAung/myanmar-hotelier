@@ -6,10 +6,12 @@
     <MainPageVisionMission></MainPageVisionMission>
     <LatestNews></LatestNews>
     <AdsPromotion></AdsPromotion>
+    <Greeting></Greeting>
   </div>
 </template>
 
 <script>
+import Greeting from '../components/Greeting'
 import AdsPromotion from '../components/AdsPromotion'
 import LatestNews from '../components/LatestNews'
 import MainPageVisionMission from '../components/MainPageVisionMission'
@@ -20,6 +22,7 @@ import Carousel from '../components/Carousel'
 
 export default {
   components: {
+    Greeting,
     AdsPromotion,
     LatestNews,
     MainPageVisionMission,

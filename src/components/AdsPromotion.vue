@@ -3,7 +3,7 @@
         <div class="container">
             <div class="lna-row lna-justify-content-center lna-mb-5 lna-pb-2">
                 <div class="lna-col-md-8 lna-text-center lna-heading-section lna-ftco-animate">
-                    <h1 class="lna-mb-4">Get The Benefits From <span class="auto-type"></span></h1>
+                    <h1 class="lna-mb-4">Get The Benefits From <span class="auto-type"> {{ TypedText }}</span></h1>
                     <p>Take the best offers and promotions from our association. <br>sGet the benefits from Our Team as a Business Member.</p>
                 </div>
             </div>
@@ -19,6 +19,7 @@
 </template>
 
 <script>
+import { onMounted, ref } from 'vue';
     export default {
         setup() {
             let ads = [
@@ -39,7 +40,34 @@
                 },
             ];
 
-            return {ads}
+            const sentences = ref(['MHA', 'Our Members', 'Our Partners']);
+            const TypedText = ref('');
+            let sentenceIndex = ref(0);
+            let charIndex = ref(0);
+
+            const typeWriter = () => {
+                const sentence = sentences.value[sentenceIndex.value];
+
+                TypedText.value += sentence[charIndex.value];
+                charIndex.value++;
+
+
+                if(charIndex.value === sentence.length + 1) {
+                    TypedText.value = '',
+                    charIndex.value = 0,
+                    sentenceIndex.value++;
+
+                    if(sentenceIndex.value === sentences.value.length) {
+                        sentenceIndex.value = 0;
+                    }
+                }
+            }
+
+            onMounted(() => {
+                setInterval(typeWriter, 300)
+            })
+
+            return {ads, TypedText}
         }
     }
 </script>
