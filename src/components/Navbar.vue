@@ -18,9 +18,9 @@
                                             <div class="col-megamenu">
                                                 <h6 class="title">MHA Members</h6>
                                                 <ul class="list-unstyled">
-                                                    <li><a href="cec-members.html" class="dropdown-item">CEC Members</a></li>
+                                                    <li><a href="/cec-members" class="dropdown-item">CEC Members</a></li>
 
-                                                    <li><a href="constitution.html" class="dropdown-item">Constitution</a></li>
+                                                    <li><a href="/constitution" class="dropdown-item">Constitution</a></li>
                                                 </ul>
                                             </div>
                                             <!-- col-megamenu.// -->
@@ -30,8 +30,8 @@
                                             <div class="col-megamenu">
                                                 <h6 class="title">Apply Membership</h6>
                                                 <ul class="list-unstyled">
-                                                    <li><a href="fee.html" class="dropdown-item">Fees</a></li>
-                                                    <li><a href="benefit.html" class="dropdown-item">Benefits</a></li>
+                                                    <li><a href="/fees" class="dropdown-item">Fees</a></li>
+                                                    <li><a href="/benefits" class="dropdown-item">Benefits</a></li>
                                                 </ul>
                                             </div>
                                             <!-- col-megamenu.// -->
@@ -148,11 +148,29 @@
                         </li>
                         <!-- Contact Page -->
                         <li class="nav-item">
-                            <a href="contact.html" class="nav-link"><i class='bx bx-mobile'></i>Contact</a>
+                            <a href="/contact" class="nav-link"><i class='bx bx-mobile'></i>Contact</a>
                         </li>
                         <!-- About Us Page -->
                         <li class="nav-item">
-                            <a href="about.html" class="nav-link"><i class="fa fa-th-large"></i>About Us</a>
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"><i class="fa fa-th-large"></i>About Us</a>
+                            <div class="dropdown-menu megamenu" role="menu">
+                                <div class="container">
+                                    <div class="row g-3">
+                                        <div class="col-lg-4 col-6">
+                                            <div class="col-megamenu">
+                                                <ul class="list-unstyled">
+                                                    <li><a href="/introduction" class="dropdown-item">Introduction</a></li>
+                                                    <li><a href="/vision-mission" class="dropdown-item">Vision & Mission</a></li>
+                                                    <li><a href="/chairman-message" class="dropdown-item">Chairman Messsage</a></li>
+                                                </ul>
+                                            </div>
+                                            <!-- col-megamenu.// -->
+                                        </div>
+                                        <!-- end col-3 -->
+                                    </div>
+                                    <!-- end row -->
+                                </div>
+                            </div>
                         </li>
                     </ul>
                     <!-- Search Bar and Login -->
