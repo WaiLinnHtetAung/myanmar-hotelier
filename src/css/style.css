@@ -33,6 +33,10 @@ body.stopScrolling {
     overflow: hidden;
 }
 
+.pointer {
+    cursor: pointer;
+}
+
 ::selection {
     background-color: hsla(var(--hue-1), 100%, 60%, 0.9);
     color: #fff;
@@ -815,3 +819,288 @@ form button .bx {
 
 
 /* -----------End About constitution, fee-------------------  */
+
+
+/* --------hotel zones ---------  */
+
+.famous-section {
+    margin: 7rem 2rem;
+    padding: 1rem 0;
+    overflow: hidden;
+    background-image: linear-gradient(to right, #0193c9, #196288, #0193c9);
+    border-top-left-radius: 300px;
+    border-bottom-right-radius: 200px;
+    border-top-right-radius: 40px;
+}
+
+.famous-section h1 {
+    font-size: 40px !important;
+    color: #c9a42e !important;
+    margin: 2rem auto 1rem;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.famous-card-wrap {
+    cursor: pointer;
+    margin-bottom: 32px;
+}
+
+.famous-card {
+    position: relative;
+    width: 100%;
+    /* height: 400px; */
+    background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1.5rem 1.5rem;
+    overflow: hidden;
+    transition: 0.3s;
+    border-radius: 20px;
+}
+
+.card-content img {
+    height: 200px;
+}
+
+.famous-card:before {
+    content: attr(data-card);
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    font-size: 6rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--main-color);
+    opacity: 0.025;
+}
+
+.famous-card:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0px;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to right, #2d0b00, #c9a42e);
+    transition: 0.3s;
+}
+
+.famous-card-wrap:hover .famous-card {
+    transform: translateY(-15px);
+}
+
+.famous-card-wrap:hover .famous-card:after {
+    height: 8px;
+}
+
+.famous-card .title-sm {
+    line-height: 0.8;
+    color: #c9a42e;
+    font-size: 1.2rem;
+}
+
+.famous-card .text {
+    font-size: 1rem;
+    margin: 1rem 0;
+    color: #fff;
+    text-align: left;
+}
+
+.famous-icon {
+    width: 100%;
+    height: 250px;
+    margin-bottom: 1.7rem;
+}
+
+.list-navigation {
+    display: flex;
+    width: 30%;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.list-navigation ul {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.list-navigation ul li a {
+    color: #333;
+    margin: 0 0.8rem;
+    cursor: pointer;
+    align-items: center;
+}
+
+.active-page {
+    color: #0193c9 !important;
+    font-weight: 550;
+}
+
+.list-navigation .uil {
+    align-items: center;
+    font-size: 2rem;
+    color: #333;
+}
+
+.active>.page-link {
+    background: none !important;
+    background: linear-gradient(to right, #0193c9, #196288, #0193c9) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    font-weight: bold;
+    transform: scale(1.2);
+}
+
+.page-link {
+    border: none !important;
+    color: #333 !important;
+    font-size: .9rem;
+}
+
+.hotel-zone .container {
+    width: 94% !important;
+}
+
+.card.hotel-card {
+    width: 320px;
+    height: 460px;
+    margin: 8px auto !important;
+    position: relative;
+}
+
+.card.hotel-card img {
+    width: 100%;
+    height: 150px;
+}
+
+.card-link {
+    background: linear-gradient(to right, #0193c9, #196288) !important;
+    position: absolute;
+    bottom: 15px;
+    left: auto;
+    margin: 0 auto;
+}
+
+.card-link:hover {
+    background: linear-gradient(to right, #196288, #0193c9) !important;
+}
+
+.card-title {
+    background: linear-gradient(to right, #c9a42e, #96711b, #c9a42e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: .9rem !important;
+    font-weight: bold;
+}
+
+.card-subtitle {
+    font-size: .8rem !important;
+}
+
+.card-text {
+    font-size: 0.8rem !important;
+}
+
+.card-body .card-text .fa {
+    background: linear-gradient(to right, #0193c9, #196288, #0193c9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1rem !important;
+}
+
+.card-body p {
+    margin-bottom: 0.5rem !important;
+}
+
+@media (min-width: 1500px) {
+    .card-content img {
+        height: 320px;
+        object-fit: cover;
+    }
+    .hotel-card {
+        width: 320px;
+        height: 310px;
+        margin: 8px auto !important;
+        position: relative;
+    }
+}
+
+@media (max-width: 1500px) {
+    .card.hotel-card {
+        width: 280px;
+        height: 460px;
+        margin: 8px auto !important;
+        position: relative;
+        background-color: #000000;
+    }
+}
+
+@media (max-width: 850px) {
+    /* --------zones-------  */
+    .famous-card {
+        height: auto;
+    }
+    .famous-section {
+        border-top-left-radius: 200px;
+        border-bottom-right-radius: 150px;
+    }
+    .famous-section h1 {
+        font-size: 28px !important;
+    }
+    .card-content img {
+        height: 300px;
+    }
+    .card.hotel-card {
+        width: 100%;
+        height: 450px;
+        margin: 8px auto !important;
+        position: relative;
+    }
+    .card-title {
+        font-size: 0.9rem !important;
+        margin-bottom: 8px;
+    }
+    .card-subtitle {
+        font-size: 0.8rem !important;
+    }
+    .card-text {
+        font-size: 0.8rem !important;
+    }
+}
+
+@media (max-width: 450px) {
+    .hotel-card {
+        width: 100%;
+        margin: 10px auto !important;
+    }
+    .famous.services {
+        margin: 20px;
+    }
+    .famous.services h1 {
+        margin: 4rem auto 2rem;
+        font-size: 16px !important;
+    }
+    .famous.services .container {
+        width: 100%;
+        padding: 0 20px;
+    }
+    .card-content img {
+        width: 90%;
+        height: 200px;
+        margin-top: 20px;
+    }
+}
+
+
+/**
+* ---------------- End Hotel Zones Page --------------- *
+**/

@@ -4,4 +4,11 @@ import router from './router'
 import store from './store'
 import '@/css/style.css'
 
-createApp(App).use(store).use(router).mount('#app')
+import Pagination from 'v-pagination-3'
+
+
+createApp(App)
+    .use(store)
+    .use(router)
+    .component('pagination', Pagination)
+    .mount('#app')

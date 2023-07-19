@@ -41,8 +41,8 @@
                                             <div class="col-megamenu">
                                                 <h6 class="title">Application Form</h6>
                                                 <ul class="list-unstyled">
-                                                    <li><a href="hform.html" class="dropdown-item">Hotel Member Form</a></li>
-                                                    <li><a href="phform.html" class="dropdown-item">Personal Member Form</a></li>
+                                                    <li><a href="/hotel-member-form" class="dropdown-item">Hotel Member Form</a></li>
+                                                    <li><a href="/personal-member-form" class="dropdown-item">Personal Member Form</a></li>
                                                 </ul>
                                             </div>
                                             <!-- col-megamenu.// -->
@@ -85,60 +85,16 @@
                             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"><i class="fa fa-map-o"></i>Zones</a>
                             <div class="dropdown-menu megamenu" role="menu">
                                 <div class="container">
-                                    <div class="row g-3">
-                                        <div class="col-lg-3 col-6">
+                                    <div class="row g-0">
+                                        <div class="col-lg-3 px-lg-3 col-6 mb-0" v-for="(zone, index) in zones" :key="index">
                                             <div class="col-megamenu">
                                                 <ul class="list-unstyled">
-                                                    <li><a class="dropdown-item" href="ygnzone.html">Yangon</a></li>
-                                                    <li><a class="dropdown-item" href="mdyzone.html">Mandalay</a></li>
-                                                    <li><a class="dropdown-item" href="nptzone.html">Naypyitaw</a></li>
-                                                    <li><a class="dropdown-item" href="baganzone.html">Bagan</a></li>
-                                                    <li><a class="dropdown-item" href="ctzone.html">Chaung Thar</a></li>
-                                                    <li><a class="dropdown-item" href="ngwesaungzone.html">Ngwe Saung</a></li>
+                                                    <li><a class="dropdown-item" :href="`/zones/${zone.slug}`">{{zone.name}}</a></li>
                                                 </ul>
                                             </div>
                                             <!-- col-megamenu.// -->
                                         </div>
-                                        <!-- end col-3 -->
-                                        <div class="col-lg-3 col-6">
-                                            <div class="col-megamenu">
-                                                <ul class="list-unstyled">
-                                                    <li><a class="dropdown-item" href="mlmzone.html">Maw La Myine</a></li>
-                                                    <li><a class="dropdown-item" href="magwayzone.html">Magway</a></li>
-                                                    <li><a class="dropdown-item" href="rakhinezone.html">Rakhine</a></li>
-                                                    <li><a class="dropdown-item" href="bagozone.html">Bago</a></li>
-                                                    <li><a class="dropdown-item" href="pyayzone.html">Pyay</a></li>
-                                                    <li><a class="dropdown-item" href="kachinzone.html">Kachin</a></li>
-                                                </ul>
-                                            </div>
-                                            <!-- col-megamenu.// -->
-                                        </div>
-                                        <!-- end col-3 -->
-                                        <div class="col-lg-3 col-6">
-                                            <div class="col-megamenu">
-                                                <ul class="list-unstyled">
-                                                    <li><a class="dropdown-item" href="kayahzone.html">Kayah</a></li>
-                                                    <li><a class="dropdown-item" href="kayinzone.html">Kayin</a></li>
-                                                    <li><a class="dropdown-item" href="pyinoolwinzone.html">Pyin Oo Lwin</a></li>
-                                                    <li><a class="dropdown-item" href="shanzone.html">Shan (South)</a></li>
-                                                    <li><a class="dropdown-item" href="shan(north)zone.html">Shan (North)</a></li>
-                                                </ul>
-                                            </div>
-                                            <!-- col-megamenu.// -->
-                                        </div>
-                                        <!-- end col-3 -->
-                                        <div class="col-lg-3 col-6">
-                                            <div class="col-megamenu">
-                                                <ul class="list-unstyled">
-                                                    <li><a class="dropdown-item" href="tanintharyizone.html">TaninTharYi</a></li>
-                                                    <li><a class="dropdown-item" href="sagaingzone.html">Sa Gaing</a></li>
-                                                    <li><a class="dropdown-item" href="chinzone.html">Chin</a></li>
-                                                    <li><a class="dropdown-item" href="goldentrianglezone.html">Golden Triangle</a></li>
-                                                    <li><a class="dropdown-item" href="hotelsupplier.html">Hotel Suppliers</a></li>
-                                                </ul>
-                                            </div>
-                                            <!-- col-megamenu.// -->
-                                        </div>
+                                        
                                         <!-- end col-3 -->
                                     </div>
                                     <!-- end row -->
@@ -159,9 +115,9 @@
                                         <div class="col-lg-4 col-6">
                                             <div class="col-megamenu">
                                                 <ul class="list-unstyled">
-                                                    <li><a href="/introduction" class="dropdown-item">Introduction</a></li>
                                                     <li><a href="/vision-mission" class="dropdown-item">Vision & Mission</a></li>
                                                     <li><a href="/chairman-message" class="dropdown-item">Chairman Messsage</a></li>
+                                                    <li><a href="/introduction" class="dropdown-item">Organization & Responsibilities</a></li>
                                                 </ul>
                                             </div>
                                             <!-- col-megamenu.// -->
@@ -191,6 +147,7 @@
 
 <script>
 import { onMounted, ref } from 'vue'
+import getZones from '@/composables/getZones'
     export default {
         setup() {
             let isScrolled = ref(false);
@@ -203,12 +160,17 @@ import { onMounted, ref } from 'vue'
                 }
             }
 
+            let {zones, errors, load} = getZones();
+
+            load();
+
             onMounted(() => {
                 window.addEventListener('scroll', scrollChange)
+                
             })
 
 
-            return {isScrolled}
+            return {isScrolled, zones, errors}
         }
     }
 </script>
@@ -231,7 +193,7 @@ import { onMounted, ref } from 'vue'
 
     @media (max-width:1500px) {
         header .container-fluid {
-            padding: 0 3%;
+            padding: 0 9%;
         }
     }
 

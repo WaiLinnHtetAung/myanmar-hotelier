@@ -56,6 +56,25 @@ const routes = [{
         component: () =>
             import ('@/views/AboutUs/ChairmanMessage.vue')
     },
+    // -----end about us------ 
+    {
+        path: '/zones/:zoneName',
+        name: 'Zone',
+        component: () =>
+            import ('@/views/zones/Yangon.vue'),
+    },
+    {
+        path: '/hotel-member-form',
+        name: 'HotelMemberForm',
+        component: () =>
+            import ('@/views/HotelMemberForm.vue')
+    },
+    {
+        path: '/personal-member-form',
+        name: 'PersonalMemberForm',
+        component: () =>
+            import ('@/views/PersonalMemberForm.vue')
+    },
     {
         path: "/:pathMatch(.*)*",
         component: () =>
