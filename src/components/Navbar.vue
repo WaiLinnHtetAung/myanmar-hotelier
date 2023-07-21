@@ -64,7 +64,7 @@
                                             <div class="col-megamenu">
                                                 <h6 class="title">Latest News</h6>
                                                 <ul class="list-unstyled">
-                                                    <li><a href="news.html" class="dropdown-item">Activities</a></li>
+                                                    <li><a href="/news/activities" class="dropdown-item">Activities</a></li>
                                                     <li><a href="news.html" class="dropdown-item">Weather</a></li>
                                                     <li><a href="news.html" class="dropdown-item">Foreign Currency</a></li>
                                                     <li><a href="news.html" class="dropdown-item">Emergency Health</a></li>

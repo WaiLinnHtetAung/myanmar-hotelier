@@ -61,7 +61,8 @@ const routes = [{
         path: '/zones/:zoneName',
         name: 'Zone',
         component: () =>
-            import ('@/views/zones/Yangon.vue'),
+            import (`@/views/zones/Zone.vue`),
+        props: true,
     },
     {
         path: '/hotel-member-form',
@@ -74,6 +75,19 @@ const routes = [{
         name: 'PersonalMemberForm',
         component: () =>
             import ('@/views/PersonalMemberForm.vue')
+    },
+    {
+        path: '/news/activities',
+        name: 'Activities',
+        component: () =>
+            import ('@/views/news/Activities.vue')
+    },
+    {
+        path: '/news/:id',
+        name: 'NewsDetail',
+        component: () =>
+            import ('@/views/news/NewsDetail.vue'),
+        props: true
     },
     {
         path: "/:pathMatch(.*)*",

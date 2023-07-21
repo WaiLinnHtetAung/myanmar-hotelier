@@ -62,76 +62,14 @@
             </div>
         </div>
     </section>
-
-    <div class="hotel-zone">
-        <div class="container">
-            <div class="row">
-
-                <div class="paginate">
-                    <pagination v-model="currentPage" :records="total" :per-page="60" @paginate="getData(currentPage)"/>
-                </div>
-                
-                <div class="col-lg-3 col-md-6 col-sm-4" v-for="(hotel, index) in hotels" :key="index">  
-                    <div class="card hotel-card  shadow p-2 mb-5 bg-body rounded">
-                        <div class="card-header">
-                            <img :src="hotel.image" alt="">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">{{hotel.name}}</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">{{hotel.owner}}</h6>
-                            <h6 class="card-subtitle mb-2 text-muted">Sr. No {{hotel.sr_no}}</h6>
-                            <h6 class="card-subtitle mb-2 text-muted">{{hotel.total_room}} Room</h6>
-                            <p class="card-text"><i class="fa fa-phone"></i> {{hotel.phone}}</p>
-                            <p class="card-text"><i class="fa fa-location-arrow"></i> {{hotel.email}}</p>
-                            <p class="card-text"><i class="fa fa-map-marker"></i> {{hotel.address}}</p>
-                            <a :href="hotel.web_link" class="card-link btn btn-outline-light">View Website</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="paginate">
-                <pagination v-model="currentPage" :records="total" :per-page="60" @paginate="getData(currentPage)"/>
-            </div>
-        </div>
-    </div>
-
-
 </template>
 
 <script>
-    import getHotels from '@/composables/getHtels'
-    import { onMounted, ref } from 'vue';
-    
     export default {
-        setup() {
-            let default_img = require('@/assets/images/default.webp');
-            const currentPage = ref(1);
-          
-
-            let {hotels, total, errors, load} = getHotels();
-
-            load();
-
-            let getData = (page) => {
-                load(page);
-            }
-
-            return {hotels, default_img, currentPage, getData, total}
-        }
+        
     }
 </script>
 
-<style>
-    .paginate {
-        width: 400px;
-        margin: 35px auto 15px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-    }
-
-    
-  
+<style lang="stylus" scoped>
 
 </style>

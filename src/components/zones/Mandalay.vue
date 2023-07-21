@@ -2,7 +2,7 @@
     <section class="header">
         <div class="sub-banner">
             <div class="slider">
-                <img src="images/about3.jpg" id="aboutImg">
+                <img src="@/assets/images/about3.jpg" id="aboutImg">
             </div>
             <div class="sub-overlay">
                 <div class="content">
@@ -25,7 +25,7 @@
                     <div class="famous-card-wrap">
                         <div class="famous-card" data-card="UI/UX">
                             <div class="card-content z-index">
-                                <img src="./images/famous-mdy-01.jpg" class="famous-icon" alt="" />
+                                <img src="@/assets/images/zones/famous-mdy-01.jpg" class="famous-icon" alt="" />
                                 <h3 class="title-sm">KuThoDaw Pagoda</h3>
                                 <p class="text">
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam est suscipit itaque?
@@ -40,7 +40,7 @@
                     <div class="famous-card-wrap">
                         <div class="famous-card" data-card="Code">
                             <div class="card-content z-index">
-                                <img src="./images/famous-mdy-02.jpg" class="famous-icon" alt="" />
+                                <img src="@/assets/images/zones/famous-mdy-02.jpg" class="famous-icon" alt="" />
                                 <h3 class="title-sm">Mahamuni Buddha Temple</h3>
                                 <p class="text">
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores suscipit nobi?
@@ -55,7 +55,7 @@
                     <div class="famous-card-wrap">
                         <div class="famous-card" data-card="App">
                             <div class="card-content z-index">
-                                <img src="./images/famous-mdy-03.jpg" class="famous-icon" alt="" />
+                                <img src="@/assets/images/zones/famous-mdy-03.jpg" class="famous-icon" alt="" />
                                 <h3 class="title-sm">U Bein Bridge</h3>
                                 <p class="text">
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum hic veniam.

@@ -4,15 +4,13 @@
             <div class="slider">
                 <img :src="currentImage" id="slideImg">
             </div>
-            <div class="overlay">
-                <div class="content">
-                    <h1>MYANMAR HOTELIER ASSOCIATION</h1>
-                    <h3>
-                        <p>ORGANIZATION AND RESPONSIBILITIES</p>
-                    </h3>
-                    <div>
-                        <button class="about-btn" type="button"><a href="about.html">About Us</a></button>
-                    </div>
+            <div class="content">
+                <h1>MYANMAR HOTELIER ASSOCIATION</h1>
+                <h3>
+                    <p>ORGANIZATION AND RESPONSIBILITIES</p>
+                </h3>
+                <div>
+                    <button class="about-btn" type="button"><a href="about.html">About Us</a></button>
                 </div>
             </div>
         </div>
@@ -100,31 +98,21 @@ import { onMounted, ref } from 'vue'
     }
 }
 
-.overlay {
-    width: 100%;
-    height: 80vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
-    /*background: linear-gradient(to top, transparent, #0193c9 20%,#2d0b00 100%);*/
-    /*background: transparent;*/
-    opacity: 1;
-    position: absolute;
-    top: 0;
-}
 
 .logo {
     flex-basis: 10%;
 }
 
 .content {
+    position: absolute;
     width: 60%;
-    margin-top: 400px;
-    margin-left: 100px;
+    top: 50%;
     text-align: left;
     color: #fff;
 }
 
 .content h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: bold;
     color: #c9a42e;
 }
@@ -132,14 +120,14 @@ import { onMounted, ref } from 'vue'
 .content h3 {
     width: 100%;
     margin: 20px auto 50px;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 600;
     line-height: 10px;
 }
 
 button {
     width: 150px;
-    padding: 10px 0;
+    padding: 6px 0;
     text-align: center;
     margin: 0 10px;
     border-radius: 15px;
@@ -223,23 +211,14 @@ button:hover a {
         height: 400px;
         object-fit: cover;
     }
-    .overlay {
-        width: 100%;
-        height: 30vh;
-        background: none;
-        /*background: linear-gradient(to top, transparent, #0193c9 20%,#2d0b00 100%);*/
-        /*background: transparent;*/
-        opacity: 1;
-        position: absolute;
-        bottom: 20%;
-    }
     .logo {
         flex-basis: 10%;
     }
     .content {
+        position: absolute;
         width: 60%;
-        margin-top: 250px;
-        margin-left: 100px;
+        top: 30%;
+        left: 0%;
         text-align: left;
         color: #fff;
     }
@@ -278,23 +257,14 @@ button:hover a {
         height: 300px;
         object-fit: cover;
     }
-    .overlay {
-        width: 100%;
-        height: 30vh;
-        background: none;
-        /*background: linear-gradient(to top, transparent, #0193c9 20%,#2d0b00 100%);*/
-        /*background: transparent;*/
-        opacity: 1;
-        position: absolute;
-        bottom: 40% !important;
-    }
     .logo {
         flex-basis: 10%;
     }
     .content {
+        position: absolute;
         width: 60%;
-        margin-top: 150px;
-        margin-left: 50px;
+        top: 0%;
+        left: -10%;
         text-align: left;
         color: #fff;
     }
