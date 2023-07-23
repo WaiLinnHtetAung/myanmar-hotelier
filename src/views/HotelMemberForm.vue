@@ -1,5 +1,5 @@
 <template>
-    <div class="memberForm">
+    <div class="memberForm" >
         <div class="header ">
             <div class="img ">
                 <img src="@/assets/images/logo.gif" alt="">
@@ -9,7 +9,7 @@
                 <p>(APPLICATION FORM FOR MEMBERSHIP)</p>
             </div>
         </div>
-        <form action="" @submit.prevent = register>
+        <form v-if="!isLoading" action="" @submit.prevent = register>
             <div class="row">
                 <div class="col-lg-6">
                     <div class="form-group">
@@ -147,18 +147,23 @@
             </div>
         </div>
         </form>
-
     </div>
+    <div v-if="isLoading"><Loading></Loading></div>
+
 </template>
 
 <script>
-    import { computed, ref, watch } from 'vue'
+    import Loading from '../components/Loading'
+import { computed, ref, watch } from 'vue'
     import axios from 'axios'
     import useImageUpload from '@/composables/useImageUpload'
     import api from '@/api/api'
+    import Swal from 'sweetalert2'
 
     export default {
+  components: { Loading },
         setup() {
+            let isLoading = ref(false);
 
             //image upload to server
             let {imageFile, imageUrl, handleImageSelected} = useImageUpload();
@@ -178,6 +183,7 @@
             })
 
             let register = async() => {
+                isLoading.value = true;
                 try{
                     //create a new formdata instance
                     let formDataToSend = new FormData();
@@ -200,8 +206,18 @@
 
                     let response = await axios.post(api.sendHotelMemberForm, formDataToSend);
 
-                    console.log(response);
-                    console.log(imageFile.value);
+                    if(response.status === 200) {
+                        isLoading.value = false;
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Your form is submitted successfully',
+                            text: "Myanmar Hotelier Association's KBZ Bank A/c -02730402703098001 and A/c name is Myanmar Hotelier Association.",
+                        }).then((result) => {
+                            if(result.isConfirmed) {
+                                window.location.href = '/';
+                            }
+                        })
+                    }
 
                 }
                 catch(err) {
@@ -212,7 +228,7 @@
             
             
 
-            return {formData,  register, handleImageSelected, imageUrl};
+            return {formData,  register, handleImageSelected, imageUrl, isLoading};
         }
     }
 </script>

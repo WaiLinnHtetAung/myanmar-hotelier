@@ -1104,3 +1104,22 @@ form button .bx {
 /**
 * ---------------- End Hotel Zones Page --------------- *
 **/
+
+
+/* ---------------sweetalert 2 -------------  */
+
+.swal2-modal .swal2-title {
+    font-size: 18px;
+}
+
+.swal2-modal .swal2-html-container {
+    font-size: 14px;
+}
+
+.swal2-modal .swal2-actions .swal2-confirm {
+    width: 200px;
+}
+
+body>div.swal2-container.swal2-center.swal2-backdrop-show {
+    background: rgb(0, 0, 0, .7) !important;
+}
