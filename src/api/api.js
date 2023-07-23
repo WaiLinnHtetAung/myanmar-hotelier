@@ -1,4 +1,4 @@
-let host = 'http://localhost:8000/api/v1/';
+let host = 'https://mha.admin.itgatewaymm.com/api/v1/';
 
 let api = {
     getZones: host + 'zones',
@@ -6,7 +6,9 @@ let api = {
     getHotelsBySubzone: host + 'hotelsBySubzone',
     getNews: host + 'news',
     getNewsDetail: host + 'news/',
-    image_url: 'http://localhost:8000/storage/images/',
+
+    sendHotelMemberForm: host + 'createHotelMemberForm',
+    image_url: 'https://mha.admin.itgatewaymm.com/storage/images/',
 };
 
 export default api;

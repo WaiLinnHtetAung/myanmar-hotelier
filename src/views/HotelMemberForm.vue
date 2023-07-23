@@ -9,30 +9,37 @@
                 <p>(APPLICATION FORM FOR MEMBERSHIP)</p>
             </div>
         </div>
-        <form action="" >
+        <form action="" @submit.prevent = register>
             <div class="row">
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label for="">Owner Name</label>
-                        <input type="text" name="owner" class="form-control " placeholder="Enter your name">
+                        <input type="text" name="owner" class="form-control " placeholder="Enter your name" v-model="formData.owner" required>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label for="">N.R.C No</label>
-                        <input type="text" name="nrc_no" class="form-control " placeholder="Enter your NRC number">
+                        <input type="text" name="nrc_no" class="form-control " placeholder="Enter your NRC number" v-model="formData.nrc_no" required>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label for="">Contact Phone</label>
-                        <input type="text" name="owner_phone" class="form-control " placeholder="Enter your phone number">
+                        <input type="text" name="owner_phone" class="form-control " placeholder="Enter your phone number" v-model="formData.owner_phone" required>
                     </div>
+                </div>
+                <div class="col-lg-6 image-container">
+                    <div class="form-group">
+                        <label for="">Owner Photo</label>
+                        <input type="file" name="owner_photo" @change="handleImageSelected" accept="image/*" class="form-control " placeholder="Enter your phone number" required>
+                    </div>
+                    <img v-show="imageUrl" :src="imageUrl" >
                 </div>
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label for="">Address</label>
-                        <textarea placeholder="Enter your address" name="address" class="form-control" id="" cols="30" rows="4"></textarea>
+                        <textarea placeholder="Enter your address" name="address" class="form-control" id="" cols="30" rows="4" v-model="formData.address" required></textarea>
                     </div>
                 </div>
             </div>
@@ -41,37 +48,37 @@
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label for="">Hotel Name</label>
-                        <input type="text" name="hotel_name" class="form-control " placeholder="Enter hotel's name">
+                        <input type="text" name="hotel_name" class="form-control " placeholder="Enter hotel's name" v-model="formData.hotel_name" required>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label for="">No. of Rooms</label>
-                        <input type="number" name="no_of_room" class="form-control " placeholder="Enter total rooms">
+                        <input type="number" name="no_of_room" class="form-control " placeholder="Enter total rooms" v-model="formData.no_of_room" required>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label for="">No. of Employee</label>
-                        <input type="number" name="no_of_employee" class="form-control " placeholder="Enter total employee">
+                        <input type="number" name="no_of_employee" class="form-control " placeholder="Enter total employee" v-model="formData.no_of_employee" required>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label for="">Zone</label>
-                        <input type="text" name="zone" class="form-control " placeholder="Enter hotel's zone">
+                        <input type="text" name="zone" class="form-control " placeholder="Enter hotel's zone" v-model="formData.zone" required>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label for="">Phone / Fax / Email</label>
-                        <input type="text" name="hotel_contact" class="form-control " placeholder="Enter hotel's zone">
+                        <input type="text" name="hotel_contact" class="form-control " placeholder="Enter hotel's zone" v-model="formData.hotel_phone" required>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label for="">Hotel Address</label>
-                        <textarea placeholder="Enter hotel's address" name="hotel_address" class="form-control" id="" cols="30" rows="4"></textarea>
+                        <textarea placeholder="Enter hotel's address" name="hotel_address" class="form-control" id="" cols="30" rows="4" v-model="formData.hotel_address" required></textarea>
                     </div>
                 </div>
             </div>
@@ -79,19 +86,18 @@
             <div class="row membership">
                 <div class="">
                     <span class="apply_member me-5">Apply to Membership</span>
-                    <input class="form-check-input me-1" type="radio" name="member_type" value="A" id="flexRadioDefault1" checked>
+                    <input class="form-check-input me-1" type="radio" name="member_type" value="A" id="flexRadioDefault1" checked v-model="formData.member_type" >
                     <label class="form-check-label text-white" for="flexRadioDefault1">
                         (A)
                     </label>
 
-                    <input class="form-check-input r-input mx-4" type="radio" name="member_type" value="R" id="flexRadioDefault2" >
+                    <input class="form-check-input r-input mx-4" type="radio" name="member_type" value="R" id="flexRadioDefault2" v-model="formData.member_type">
                     <label class="form-check-label text-white" for="flexRadioDefault2">
                         (R)
                     </label>
                 </div>
             </div>
             <hr>
-        </form>
 
         <div class="information">
             <h6>"Annual Fees shall cost 2500 Kyats per room for a year and are collected 3 years at a time"</h6>
@@ -134,18 +140,80 @@
 
         <div class="form_button row">
             <div class="col-lg-6 col-md-6 col-6">
-                <div class="button text-center pointer">Register</div>
+                <button type="submit" class="button text-center pointer w-100">Register</button>
             </div>
             <div class="col-lg-6 col-md-6 col-6">
                 <router-link to="/"><div class="button text-center pointer">Cancel</div></router-link>
             </div>
         </div>
+        </form>
+
     </div>
 </template>
 
 <script>
+    import { computed, ref, watch } from 'vue'
+    import axios from 'axios'
+    import useImageUpload from '@/composables/useImageUpload'
+    import api from '@/api/api'
+
     export default {
-        
+        setup() {
+
+            //image upload to server
+            let {imageFile, imageUrl, handleImageSelected} = useImageUpload();
+
+            let formData = ref({
+                owner: '',
+                nrc_no: '',
+                owner_phone: '',
+                address: '',
+                hotel_name: '',
+                no_of_room: '',
+                no_of_employee: '',
+                zone: '',
+                hotel_phone: '',
+                hotel_address: '',
+                member_type: '',
+            })
+
+            let register = async() => {
+                try{
+                    //create a new formdata instance
+                    let formDataToSend = new FormData();
+
+                    //append image file to the formData
+                    formDataToSend.append('owner_image', imageFile.value)
+
+                    //append other form fields to formDataToSend
+                    formDataToSend.append('owner', formData.value.owner);
+                    formDataToSend.append('nrc_no', formData.value.nrc_no);
+                    formDataToSend.append('owner_phone', formData.value.owner_phone);
+                    formDataToSend.append('address', formData.value.address);
+                    formDataToSend.append('hotel_name', formData.value.hotel_name);
+                    formDataToSend.append('no_of_room', formData.value.no_of_room);
+                    formDataToSend.append('no_of_employee', formData.value.no_of_employee);
+                    formDataToSend.append('zone', formData.value.zone);
+                    formDataToSend.append('hotel_phone', formData.value.hotel_phone);
+                    formDataToSend.append('hotel_address', formData.value.hotel_address);
+                    formDataToSend.append('member_type', formData.value.member_type);
+
+                    let response = await axios.post(api.sendHotelMemberForm, formDataToSend);
+
+                    console.log(response);
+                    console.log(imageFile.value);
+
+                }
+                catch(err) {
+                    console.log(err);
+                }
+            }
+
+            
+            
+
+            return {formData,  register, handleImageSelected, imageUrl};
+        }
     }
 </script>
 
@@ -263,6 +331,18 @@
         font-weight: bold;
         padding: 7px 0;
         border-radius: 20px;
+    }
+
+    .image-container {
+        position: relative;
+    }
+
+    .image-container img {
+        position: absolute;
+        width: 200px;
+        height: 150px;
+        object-fit: contain;
+        right: 15px;
     }
 
     @media (max-width:1500px) {
@@ -442,6 +522,14 @@
             font-size: 12px;
             border-radius: 20px;
             margin-bottom: 10px;
+        }
+
+        .image-container img {
+            position: relative;
+            width: 200px;
+            height: 150px;
+            object-fit: contain;
+            left: 15px;
         }
     }
 

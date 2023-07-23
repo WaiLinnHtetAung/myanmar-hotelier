@@ -1,6 +1,26 @@
 <template>
     <div v-if="zoneName == 'Yangon'"><Yangon></Yangon></div>
     <div v-if="zoneName == 'Mandalay'"><Mandalay></Mandalay></div>
+    <div v-if="zoneName == 'NayPyiTaw'"><NayPyiTaw></NayPyiTaw></div>
+    <div v-if="zoneName == 'Bagan'"><Bagan></Bagan></div>
+    <div v-if="zoneName == 'ChaungThar'"><ChaungThar></ChaungThar></div>
+    <div v-if="zoneName == 'NgweSaung'"><NgweSaung></NgweSaung></div>
+    <div v-if="zoneName == 'MawLaMying'"><MawLaMying></MawLaMying></div>
+    <div v-if="zoneName == 'Magway'"><Magway></Magway></div>
+    <div v-if="zoneName == 'Rakhine'"><Rakhine></Rakhine></div>
+    <div v-if="zoneName == 'Bago'"><Bago></Bago></div>
+    <div v-if="zoneName == 'Pyay'"><Pyay></Pyay></div>
+    <div v-if="zoneName == 'Kachin'"><Kachin></Kachin></div>
+    <div v-if="zoneName == 'Kayah'"><Kayah></Kayah></div>
+    <div v-if="zoneName == 'Kayin'"><Kayin></Kayin></div>
+    <div v-if="zoneName == 'PyinOoLwin'"><PyinOoLwin></PyinOoLwin></div>
+    <div v-if="zoneName == 'ShanSouth'"><ShanSouth></ShanSouth></div>
+    <div v-if="zoneName == 'ShanNorth'"><ShanNorth></ShanNorth></div>
+    <div v-if="zoneName == 'TaninTharYi'"><TaninTharYi></TaninTharYi></div>
+    <div v-if="zoneName == 'SaGaing'"><SaGaing></SaGaing></div>
+    <div v-if="zoneName == 'Chin'"><Chin></Chin></div>
+    <div v-if="zoneName == 'GoldenTriangle'"><GoldenTriangle></GoldenTriangle></div>
+    <div v-if="zoneName == 'HotelSuppliers'"><HotelSuppliers></HotelSuppliers></div>
     <div class="hotel-zone">
         <div class="container">
             <div class="paginate ">
@@ -40,7 +60,27 @@
 </template>
 
 <script>
-    import Mandalay from '../../components/zones/Mandalay'
+import HotelSuppliers from '../../components/zones/HotelSuppliers'
+import GoldenTriangle from '../../components/zones/GoldenTriangle'
+import Chin from '../../components/zones/Chin'
+import SaGaing from '../../components/zones/SaGaing'
+import TaninTharYi from '../../components/zones/TaninTharYi'
+import ShanNorth from '../../components/zones/ShanNorth'
+import ShanSouth from '../../components/zones/ShanSouth'
+import PyinOoLwin from '../../components/zones/PyinOoLwin'
+import Kayin from '../../components/zones/Kayin'
+import Kayah from '../../components/zones/Kayah'
+import Kachin from '../../components/zones/Kachin'
+import Pyay from '../../components/zones/Pyay'
+import Bago from '../../components/zones/Bago'
+import Rakhine from '../../components/zones/Rakhine'
+import Magway from '../../components/zones/Magway'
+import MawLaMying from '../../components/zones/MawLaMying'
+import NgweSaung from '../../components/zones/NgweSaung'
+import ChaungThar from '../../components/zones/ChaungThar'
+import Bagan from '../../components/zones/Bagan'
+import NayPyiTaw from '../../components/zones/NayPyiTaw'
+import Mandalay from '../../components/zones/Mandalay'
     import Yangon from '@/components/zones/Yangon'
     import getHotels from '@/composables/getHtels'
     import { ref } from 'vue';
@@ -48,7 +88,27 @@
     import axios from "axios";
 
     export default {
-        components: { Mandalay, Yangon },
+        components: {
+    HotelSuppliers,
+    GoldenTriangle,
+    Chin,
+    SaGaing,
+    TaninTharYi,
+    ShanNorth,
+    ShanSouth,
+    PyinOoLwin,
+    Kayin,
+    Kayah,
+    Kachin,
+    Pyay,
+    Bago,
+    Rakhine,
+    Magway,
+    MawLaMying,
+    NgweSaung,
+    ChaungThar,
+    Bagan,
+    NayPyiTaw, Mandalay, Yangon },
         props: ['zoneName'],
         setup(props) {
             let default_img = require('@/assets/images/default.webp');
