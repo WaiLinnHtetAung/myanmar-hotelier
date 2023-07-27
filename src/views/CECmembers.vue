@@ -430,9 +430,9 @@
                     <div class="cec-card" data-card="Code">
                         <div class="card-content z-index">
                             <img src="@/assets/images/CEC-Member-Photo/33.jpg" class="cec-icon" alt="" />
-                            <h3 class="title-sm">U Nyi Nyi Naing</h3>
+                            <h3 class="title-sm">U Bi Sein </h3>
                             <p class="text">
-                                Chairman, Kayin Zone
+                                Chairman, Kayin Zone (Grace Hotel)
                             </p>
                             <a href="#" class="btn btn-outline-light">Hotel Thanlwin Paradise</a>
                         </div>

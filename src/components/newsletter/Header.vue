@@ -5,14 +5,14 @@
         </div>
         <div class="newsletter-text">
             <div class="first-link"></div>
-            <h6>မြန်မာနိုင်ငံဆိုင်ရာ ဟိုတယ်လုပ်ငန်းရှင်များအသင်း</h6>
+            <h6>မြန်မာနိုင်ငံဟိုတယ်ဆိုင်ရာလုပ်ငန်းရှင်များအသင်း</h6>
             <h2>NEWS LETTER</h2>
             <div class="last-link-container">
                 <div class="last-link"></div>
                 
-                <div class="date" v-if="isLoaded && !isDetail">{{ news ? new Date(news[0].date).getFullYear() : '2023' }} ခုနှစ်၊ {{ news ? new Date(news[0].date).toLocaleString('default', { month: 'long' }) : 'month' }} လ ( {{ news ? new Date(news[0].date).getDate() : '' }} )ရက်နေ့မှ (30)ရက်နေ့အထိ</div>
+                <div class="date" v-if="isLoaded && !isDetail">{{ news[0] ? convertToMyanmarFont(new Date(news[0].date).getFullYear()) : '၂၀၂၃' }} ခုနှစ်၊ {{ news[0] ? new Date(news[0].date).toLocaleString('default', { month: 'long' }) : 'month' }} လ ( {{ news[0] ? convertToMyanmarFont(new Date(news[0].date).getDate()) : '' }} )ရက်နေ့မှ (၃၀)ရက်နေ့အထိ</div>
 
-                <div class="date" v-else>{{ news ? new Date(news.date).getFullYear() : '2023' }} ခုနှစ်၊ {{ news ? new Date(news.date).toLocaleString('default', { month: 'long' }) : 'month' }} လ ( {{ news ? new Date(news.date).getDate() : '' }} )ရက်နေ့မှ (30)ရက်နေ့အထိ</div>
+                <div class="date" v-else>{{ news ? convertToMyanmarFont(new Date(news.date).getFullYear()) : '၂၀၂၃' }} ခုနှစ်၊ {{ news ? new Date(news.date).toLocaleString('default', { month: 'long' }) : 'month' }} လ ( {{ news ? convertToMyanmarFont(new Date(news.date).getDate()) : '' }} )ရက်နေ့မှ (၃၀)ရက်နေ့အထိ</div>
 
             </div>
         </div>
@@ -23,6 +23,14 @@
 <script>
     export default {
         props: ['news', 'isLoaded'],
+        setup() {
+            const convertToMyanmarFont = (number) => {
+                const MyanmarNumerals = ['၀', '၁', '၂', '၃', '၄', '၅', '၆', '၇', '၈', '၉'];
+                return number.toString().replace(/\d/g, (digit) => MyanmarNumerals[digit]);
+            };
+            
+            return { convertToMyanmarFont };
+        }
     }
 </script>
 
@@ -64,7 +72,7 @@
     color: rgb(255, 183, 0);
     -webkit-text-stroke: .5px rgb(128, 3, 3);
     text-shadow: 5px 5px 1rem rgb(82, 25, 25);
-    font-size: 38px;
+    font-size: 46px;
     letter-spacing: 5px;
 }
 
@@ -122,7 +130,7 @@
     }
 
     .newsletter-text h2 {
-        font-size: 34px;
+        font-size: 38px;
         letter-spacing: 5px;
     }
 
@@ -170,7 +178,7 @@
     }
 
     .newsletter-text h2 {
-        font-size: 24px;
+        font-size: 28px;
         letter-spacing: 5px;
     }
 

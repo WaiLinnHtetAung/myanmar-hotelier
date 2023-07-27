@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <Carousel></Carousel>
+    <MainMenuNews></MainMenuNews>
     <Information></Information>
     <AboutMHA></AboutMHA>
     <MainPageVisionMission></MainPageVisionMission>
@@ -11,6 +12,7 @@
 </template>
 
 <script>
+import MainMenuNews from '../components/MainMenuNews'
 import Greeting from '../components/Greeting'
 import AdsPromotion from '../components/AdsPromotion'
 import LatestNews from '../components/LatestNews'
@@ -22,6 +24,7 @@ import Carousel from '../components/Carousel'
 
 export default {
   components: {
+    MainMenuNews,
     Greeting,
     AdsPromotion,
     LatestNews,
