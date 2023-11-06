@@ -65,6 +65,13 @@ const routes = [{
         props: true,
     },
     {
+        path: '/destination/:destinationName',
+        name: 'Destination',
+        component: () =>
+            import ('@/views/destination/Destination.vue'),
+        props: true,
+    },
+    {
         path: '/hotel-member-form',
         name: 'HotelMemberForm',
         component: () =>

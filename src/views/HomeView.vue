@@ -37,5 +37,6 @@ export default {
 
 <style scoped>
   .home {
+    overflow-x: hidden !important;
   }
 </style>

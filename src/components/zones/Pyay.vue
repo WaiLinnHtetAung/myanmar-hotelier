@@ -25,46 +25,47 @@
                     <div class="famous-card-wrap">
                         <div class="famous-card" data-card="UI/UX">
                             <div class="card-content z-index">
-                                <img src="@/assets/images/zones/famous-npt-01.jpg" class="famous-icon" alt="" />
-                                <h3 class="title-sm">Uppatasanti Pagoda</h3>
+                                <img src="@/assets/images/destination/pyay/famous_places/1.jpg" class="famous-icon" alt="" />
+                                <h3 class="title-sm">ဘောဘောကြီးစေတီတော်</h3>
                                 <p class="text">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam est suscipit itaque?
+                                    ဘောဘောကြီးစေတီတော်သည် သရေခေတ္တရာမြို့ဟောင်း၏ အနောက်တောင်ဖက်တွင်တည်ရှိပြီး ဒွတ္တပေါင်မင်းကြီးတည်ထားကိုးကွယ်ခဲ့သော စေတီတော်ကိုးဆူအနက်မှ တစ်ဆူဖြစ်ပါသည်။ 
                                 </p>
-                                <a href="#" class="btn transparent">Read more</a>
+                                <a href="/destination/Pyay" class="btn transparent">Read more</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-4 famous-card-wrap">
+                <div class="col-lg-4 famout-card-wrap">
                     <div class="famous-card-wrap">
-                        <div class="famous-card" data-card="Code">
+                        <div class="famous-card" data-card="UI/UX">
                             <div class="card-content z-index">
-                                <img src="@/assets/images/zones/famous-npt-02.jpg" class="famous-icon" alt="" />
-                                <h3 class="title-sm">The Gem Museum</h3>
+                                <img  src="@/assets/images/destination/pyay/famous_places/2.jpg" class="famous-icon" alt="" />
+                                <h3 class="title-sm">ရွှေဆံတော်ဘုရား </h3>
                                 <p class="text">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores suscipit nobi?
+                                    လေးဆူဓာတ်ပျော် ရွှေဆံတော်စေတီတော်မြတ်ကြီးသည် မြတ်စွာဘုရားသက်တော်ထင်ရှားရှိစဉ် ကပင် တည်ထားကိုးကွယ်ခဲ့သော စေတီတော်မြတ်ကြီးဖြစ်သည်။
                                 </p>
-                                <a href="#" class="btn transparent">Read more</a>
+                                <a href="/destination/Pyay" class="btn transparent">Read more</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-4 famous-card-wrap">
+                <div class="col-lg-4 famout-card-wrap">
                     <div class="famous-card-wrap">
-                        <div class="famous-card" data-card="App">
+                        <div class="famous-card" data-card="UI/UX">
                             <div class="card-content z-index">
-                                <img src="@/assets/images/zones/famous-npt-03.jpg" class="famous-icon" alt="" />
-                                <h3 class="title-sm">The National Musuem</h3>
+                                <img src="@/assets/images/destination/pyay/famous_places/3.jpg" class="famous-icon" alt="" />
+                                <h3 class="title-sm">အကောက်တောင် </h3>
                                 <p class="text">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum hic veniam.
+                                    အကောက်တောင်သည် ပဲခူးတိုင်းဒေသကြီး၊ ပြည်ခရိုင်၊ ပန်းတောင်းမြို့နယ်၊ ထုံးဘိုမြို့အဆုံးနှင့် ဧရာဝတီတိုင်းဒေသကြီး၊ ဟင်္သာတခရိုင်၊ ကြံခင်းမြို့နယ်၊ သောကြာဒူးကျေးရွာအုပ်စု၌ တည်ရှိသည်။
                                 </p>
-                                <a href="#" class="btn transparent">Read more</a>
+                                <a href="/destination/Pyay" class="btn transparent">Read more</a>
                             </div>
                         </div>
                     </div>
                 </div>
+                
             </div>
         </div>
     </section>

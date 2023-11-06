@@ -10,30 +10,30 @@
 
             </div>
         </div>
-        <form action="" >
+        <form v-if="!isLoading" @submit.prevent = register >
             <div class="row">
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label for="">Owner Name</label>
-                        <input type="text" name="owner" class="form-control " placeholder="Enter your name">
+                        <input type="text" name="owner" class="form-control " v-model="formData.owner" placeholder="Enter your name">
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label for="">N.R.C No</label>
-                        <input type="text" name="nrc_no" class="form-control " placeholder="Enter your NRC number">
+                        <input type="text" name="nrc_no" class="form-control " v-model="formData.nrc_no" placeholder="Enter your NRC number">
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label for="">Contact Phone</label>
-                        <input type="text" name="owner_phone" class="form-control " placeholder="Enter your phone number">
+                        <input type="text" name="owner_phone" class="form-control " v-model="formData.owner_phone" placeholder="Enter your phone number">
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label for="">Address</label>
-                        <textarea placeholder="Enter your address" name="address" class="form-control" id="" cols="30" rows="4"></textarea>
+                        <textarea v-model="formData.address" placeholder="Enter your address" name="address" class="form-control" id="" cols="30" rows="4"></textarea>
                     </div>
                 </div>
             </div>
@@ -42,55 +42,54 @@
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label for="">Hotel Name</label>
-                        <input type="text" name="hotel_name" class="form-control " placeholder="Enter hotel's name">
+                        <input type="text" name="hotel_name" class="form-control " v-model="formData.hotel_name" placeholder="Enter hotel's name">
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label for="">No. of Rooms</label>
-                        <input type="number" name="no_of_room" class="form-control " placeholder="Enter total rooms">
+                        <input type="number" name="no_of_room" class="form-control " v-model="formData.no_of_room" placeholder="Enter total rooms">
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label for="">No. of Employee</label>
-                        <input type="number" name="no_of_employee" class="form-control " placeholder="Enter total employee">
+                        <input type="number" name="no_of_employee" class="form-control " v-model="formData.no_of_employee" placeholder="Enter total employee">
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label for="">Zone</label>
-                        <input type="text" name="zone" class="form-control " placeholder="Enter hotel's zone">
+                        <input type="text" name="zone" class="form-control " v-model="formData.zone" placeholder="Enter hotel's zone">
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label for="">Phone / Fax / Email</label>
-                        <input type="text" name="hotel_contact" class="form-control " placeholder="Enter hotel's zone">
+                        <input type="text" name="hotel_contact" class="form-control " v-model="formData.hotel_phone" placeholder="Enter hotel's zone">
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label for="">Hotel Address</label>
-                        <textarea placeholder="Enter hotel's address" name="hotel_address" class="form-control" id="" cols="30" rows="4"></textarea>
+                        <textarea v-model="formData.hotel_address" placeholder="Enter hotel's address" name="hotel_address" class="form-control" id="" cols="30" rows="4"></textarea>
                     </div>
                 </div>
             </div>
 
             <div class="row membership">
                 <div class="">
-                    <input class="form-check-input me-1" type="radio" name="member_type" value="A" id="flexRadioDefault1" checked>
+                    <input class="form-check-input me-1" type="radio" name="member_type" value="A" id="flexRadioDefault1" v-model="formData.member_type" checked>
                     <label class="form-check-label " for="flexRadioDefault1">
                         Application
                     </label>
 
-                    <input class="form-check-input r-input mx-4" type="radio" name="member_type" value="R" id="flexRadioDefault2" >
+                    <input class="form-check-input r-input mx-4" type="radio" name="member_type" value="R" id="flexRadioDefault2" v-model="formData.member_type" >
                     <label class="form-check-label " for="flexRadioDefault2">
                         Apply to Membership
                     </label>
                 </div>
             </div>
-        </form>
 
         <div class="information">
             <h6>Membership (p)</h6>
@@ -100,18 +99,87 @@
 
         <div class="form_button row">
             <div class="col-lg-6 col-md-6 col-6">
-                <div class="button text-center pointer">Register</div>
+                <div type="submit" @click="register" class="button text-center pointer">Register</div>
             </div>
             <div class="col-lg-6 col-md-6 col-6">
                 <router-link to="/"><div class="button text-center pointer">Cancel</div></router-link>
             </div>
         </div>
-    </div>
+    </form>
+</div>
+    <div v-if="isLoading"><Loading></Loading></div>
 </template>
 
 <script>
+import api from '@/api/api';
+import Loading from '../components/Loading'
+import { ref } from 'vue'
+import axios from 'axios';
+import Swal from 'sweetalert2'
+
     export default {
-        
+  components: { Loading },
+        setup() {
+            let isLoading = ref(false);
+
+            let formData = ref({
+                owner: '',
+                nrc_no: '',
+                owner_phone: '',
+                address: '',
+                hotel_name: '',
+                no_of_room: '',
+                no_of_employee: '',
+                zone: '',
+                hotel_phone: '',
+                hotel_address: '',
+                member_type: 'A',
+            });
+
+            let register = async() => {
+                isLoading.value = true;
+                try{
+                    //create a new formdata instance
+                    let formDataToSend = new FormData();
+
+
+                    //append other form fields to formDataToSend
+                    formDataToSend.append('owner', formData.value.owner);
+                    formDataToSend.append('nrc_no', formData.value.nrc_no);
+                    formDataToSend.append('owner_phone', formData.value.owner_phone);
+                    formDataToSend.append('address', formData.value.address);
+                    formDataToSend.append('hotel_name', formData.value.hotel_name);
+                    formDataToSend.append('no_of_room', formData.value.no_of_room);
+                    formDataToSend.append('no_of_employee', formData.value.no_of_employee);
+                    formDataToSend.append('zone', formData.value.zone);
+                    formDataToSend.append('hotel_phone', formData.value.hotel_phone);
+                    formDataToSend.append('hotel_address', formData.value.hotel_address);
+                    formDataToSend.append('member_type', formData.value.member_type);
+
+                    let response = await axios.post(api.sendHotelMemberForm, formDataToSend);
+
+                    if(response.status === 200) {
+                        isLoading.value = false;
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Your form is submitted successfully',
+                            text: "Myanmar Hotelier Association's KBZ Bank A/c -02730402703098001 and A/c name is Myanmar Hotelier Association.",
+                        }).then((result) => {
+                            if(result.isConfirmed) {
+                                window.location.href = '/';
+                            }
+                        })
+                    }
+
+                }
+                catch(err) {
+                    console.log(err);
+                }
+            }
+
+
+            return {formData, register, isLoading}
+        }
     }
 </script>
 

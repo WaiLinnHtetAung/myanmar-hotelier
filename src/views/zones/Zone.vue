@@ -26,7 +26,7 @@
             <div class="paginate">
                 <pagination v-model="currentPage" :records="total" :per-page="32" @paginate="getData(currentPage)" />
             </div>
-            {{zoneName}}
+            
             <select name="" id="" class="form-select w-25 my-3" @change="hotelsBySubzone">
                 <option :value="'zonename' + zoneName">All </option>
                 <option v-for="(subzone, index) in subzones" :key="index" :value="subzone.id">
@@ -132,13 +132,14 @@ export default {
 
             let response = await axios.get(api.getHotelsBySubzone + "?subzoneId=" + id);
 
+
             const filteredHotels = response.data.hotels.data.map((hotel) => {
                 let img = hotel.image == null ? require("@/assets/images/default.webp") : api.image_url + hotel.image;
                 return {...hotel, image: img};
             });
 
             hotels.value = filteredHotels;
-            total.value = filteredHotels.length;
+            total.value = response.data.hotels.total;
         };
 
         return {hotels, default_img, currentPage, getData, total, subzones, hotelsBySubzone};
@@ -147,9 +148,11 @@ export default {
 </script>
 
 <style>
-.paginate {
+.paginate nav{
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .paginate .btn-group button {

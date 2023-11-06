@@ -96,7 +96,7 @@
 }
 
 .last-link-container .date {
-    font-size: 17px;
+    font-size: 16px;
     font-weight: bold;
     color: rgb(255, 193, 34);
 }

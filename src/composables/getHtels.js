@@ -21,6 +21,7 @@ let getHotels = (zoneName) => {
                 return {...hotel, image: img };
             });
 
+
             subzones.value = response.data.subzones;
 
             total.value = response.data.hotels.total;

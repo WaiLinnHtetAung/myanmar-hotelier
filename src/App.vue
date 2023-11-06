@@ -1,7 +1,7 @@
 <template>
-  <Navbar/>
-  <router-view/>
-  <Footer/>
+    <Navbar/>
+    <router-view/>
+    <Footer/>
 </template>
 
 <script>
@@ -23,6 +23,7 @@ export default {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  overflow-x: hidden !important;
 }
 
 #app a {

@@ -63,6 +63,7 @@ import { onMounted, ref } from 'vue'
 </script>
 
 <style scoped>
+
 .banner {
     width: 100%;
     height: 75vh;
