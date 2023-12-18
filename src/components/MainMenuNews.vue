@@ -12,9 +12,9 @@
             <div class="row g-5">
                 <div class="col-lg-6">
                     <div class="post-entry-1 lg">
-                        <a href="single-post.html"><img src="@/assets/images/cover9.jpg" alt="" class="img-fluid"></a>
+                        <a href="#"><img src="@/assets/images/cover9.jpg" alt="" class="img-fluid"></a>
                         <!--<div class="post-meta"><span class="date">Lifestyle</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>-->
-                        <h2 class="post-entry-main-title"><a href="single-post.html">Myanmar Hotelier Association</a></h2>
+                        <h2 class="post-entry-main-title"><a href="#">Myanmar Hotelier Association</a></h2>
                         <p class="mb-4 d-block">
                             To develop the hotel industry in systematic ways, and get rid of the problems and difficulties that each member is not able to solve, by organizing the nationwide hotels, motels, inns and lodgings.
                             <br><br> The Myanmar Hotelier Association was set up under the close supervision of the Ministry of Hotels and Tourism in line with the permission of the Head of State.
@@ -30,14 +30,14 @@
 
                     <div class="post-entry-1 border-bottom">
                         <div class="post-meta"><span class="date">Technology Development</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
-                        <h2 class="mb-2"><a href="single-post.html">Effectively Changed the MHA Website from Traditional to Digitalized Platform</a></h2>
+                        <h2 class="mb-2"><a href="#">Effectively Changed the MHA Website from Traditional to Digitalized Platform</a></h2>
                         <span class="author mb-3 d-block">Database of Myanmar Hotels</span>
                     </div>
 
                     <div class="post-entry-1">
                         <div class="post-meta"><span class="date">Apply Membership</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
                         <h2 class="mb-2">Are You Ready to Join the Largest Association in Myanmar?
-                            <a href="single-post.html"></a>
+                            <a href="#"></a>
                         </h2>
                         <span class="author mb-3 d-block">U Aung Moe Kyi</span>
                     </div>
@@ -48,36 +48,36 @@
                     <div class="row g-5">
                         <div class="col-lg-6 border-start custom-border">
                             <div class="post-entry-1">
-                                <a href="single-post.html"><img src="@/assets/images/famous-bagan-01.jpg" alt="" class="img-fluid"></a>
+                                <a href="#"><img src="@/assets/images/famous-bagan-01.jpg" alt="" class="img-fluid"></a>
                                 <div class="post-meta"><span class="date">Bagan</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
-                                <h2><a href="single-post.html">UNESCO World Heritage Centre</a></h2>
+                                <h2><a href="#">UNESCO World Heritage Centre</a></h2>
                             </div>
                             <div class="post-entry-1">
-                                <a href="single-post.html"><img src="@/assets/images/cover10.jpg" alt="" class="img-fluid"></a>
+                                <a href="#"><img src="@/assets/images/cover10.jpg" alt="" class="img-fluid"></a>
                                 <div class="post-meta"><span class="date">KyaikHtiYo</span> <span class="mx-1">&bullet;</span> <span>Jul 17th '22</span></div>
-                                <h2><a href="single-post.html">The Most Visited Place in Myanmar</a></h2>
+                                <h2><a href="#">The Most Visited Place in Myanmar</a></h2>
                             </div>
                             <div class="post-entry-1">
-                                <a href="single-post.html"><img src="@/assets/images/cover5.jpg" alt="" class="img-fluid"></a>
+                                <a href="#"><img src="@/assets/images/cover5.jpg" alt="" class="img-fluid"></a>
                                 <div class="post-meta"><span class="date"></span>Shwe Set Taw<span class="mx-1">&bullet;</span> <span>Mar 15th '22</span></div>
-                                <h2><a href="single-post.html">A Weekend in Myanmar You Will Never Forget</a></h2>
+                                <h2><a href="#">A Weekend in Myanmar You Will Never Forget</a></h2>
                             </div>
                         </div>
                         <div class="col-lg-6 border-start custom-border">
                             <div class="post-entry-1">
-                                <a href="single-post.html"><img src="@/assets/images/cover12.jpg" alt="" class="img-fluid"></a>
+                                <a href="#"><img src="@/assets/images/cover12.jpg" alt="" class="img-fluid"></a>
                                 <div class="post-meta"><span class="date">Ngapali Beach</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
-                                <h2><a href="single-post.html">One of the Asia’s Most Beautiful Beaches</a></h2>
+                                <h2><a href="#">One of the Asia’s Most Beautiful Beaches</a></h2>
                             </div>
                             <div class="post-entry-1">
-                                <a href="single-post.html"><img src="@/assets/images/cover7.jpg" alt="" class="img-fluid"></a>
+                                <a href="#"><img src="@/assets/images/cover7.jpg" alt="" class="img-fluid"></a>
                                 <div class="post-meta"><span class="date">Water Festival</span> <span class="mx-1">&bullet;</span> <span>Mar 1st '22</span></div>
-                                <h2><a href="single-post.html">Celebrated Between 13-17 April 2023.</a></h2>
+                                <h2><a href="#">Celebrated Between 13-17 April 2023.</a></h2>
                             </div>
                             <div class="post-entry-1">
-                                <a href="single-post.html"><img src="@/assets/images/cover11.jpg" alt="" class="img-fluid"></a>
+                                <a href="#"><img src="@/assets/images/cover11.jpg" alt="" class="img-fluid"></a>
                                 <div class="post-meta"><span class="date">Inle Lake</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
-                                <h2><a href="single-post.html">The Second Largest Lake in Myanmar</a></h2>
+                                <h2><a href="#">The Second Largest Lake in Myanmar</a></h2>
                             </div>
                         </div>
 
