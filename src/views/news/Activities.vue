@@ -61,8 +61,6 @@ import { ref } from 'vue';
             let {news, errors, isLoaded, load} = getNews();
             load(currentMonth.value);
 
-            console.log(news.value);
-
             let getNewsByMonth = (event) => {
                 let month = event.target.value;
                 load(month);
