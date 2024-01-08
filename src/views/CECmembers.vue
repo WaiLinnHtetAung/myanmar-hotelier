@@ -418,9 +418,7 @@
               />
               <h3 class="title-sm">U Tun Kyaw</h3>
               <p class="text">Chairman, Bago Zone</p>
-              <a href="#" class="btn btn-outline-light"
-                >Royal Kaytumadi Hotel</a
-              >
+              <a href="#" class="btn btn-outline-light">Bayint Naung Hotel</a>
             </div>
           </div>
         </div>
